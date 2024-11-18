@@ -14,10 +14,13 @@ spec:
     spec:
       containers:
         - name: auth
-          image: rallycoding/auth
+          image: fa1q2001/auth
           env:
-            - name: MONGO_URI
-              value: 'mongodb://auth-mongo-srv:27017/auth'
+            - name: MONGO_URI_AUTH
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-uri-auth
+                  key: MONGO_URI_AUTH
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:

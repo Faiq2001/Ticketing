@@ -3,11 +3,11 @@ kind: Ingress
 metadata:
   name: ingress-service
   annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   ingressClassName: nginx
   rules:
-    - host: ticketing.dev
+    - host: ticketing.com
       http:
         paths:
           - path: /api/payments/?(.*)

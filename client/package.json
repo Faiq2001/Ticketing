@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fa1q2001/common": "^3.0.11",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "next": "^14.2.13",

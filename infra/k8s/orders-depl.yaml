@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: rallycoding/orders
+          image: fa1q2001/orders
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
@@ -24,8 +24,11 @@ spec:
               value: 'http://nats-srv:4222'
             - name: NATS_CLUSTER_ID
               value: ticketing
-            - name: MONGO_URI
-              value: 'mongodb://orders-mongo-srv:27017/orders'
+            - name: MONGO_URI_ORDERS
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-uri-orders
+                  key: MONGO_URI_ORDERS
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:

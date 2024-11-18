@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { Message } from 'node-nats-streaming';
-import { OrderStatus, OrderCancelledEvent } from '@rallycoding/common';
+import { OrderStatus, OrderCancelledEvent } from '@fa1q2001/common';
 import { OrderCancelledListener } from '../order-cancelled-listener';
 import { natsWrapper } from '../../../nats-wrapper';
 import { Order } from '../../../models/order';

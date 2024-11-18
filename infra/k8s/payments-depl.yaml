@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payments
-          image: rallycoding/payments
+          image: fa1q2001/payments
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
@@ -24,8 +24,11 @@ spec:
               value: 'http://nats-srv:4222'
             - name: NATS_CLUSTER_ID
               value: ticketing
-            - name: MONGO_URI
-              value: 'mongodb://payments-mongo-srv:27017/payments'
+            - name: MONGO_URI_PAYMENTS
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-uri-payments
+                  key: MONGO_URI_PAYMENTS
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
